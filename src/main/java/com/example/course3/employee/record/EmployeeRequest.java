@@ -9,10 +9,10 @@ public class EmployeeRequest {
     private String lastName;
     private int department;
     private int salary;
-    String valid = "qwertyuiopasdfghjklzxcvbnQWERTYUIOPASDFGHJKLZXCVBNM -";
+    private static String VALID= "qwertyuiopasdfghjklzxcvbnQWERTYUIOPASDFGHJKLZXCVBNM -";
 
     public void setFirstName(String firstName) {
-        if (StringUtils.containsOnly(firstName, valid)) {
+        if (StringUtils.containsOnly(firstName, VALID)) { //этот метод сразу проверяет на null
             this.firstName = StringUtils.capitalize(firstName.toLowerCase());
         } else {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
@@ -20,7 +20,7 @@ public class EmployeeRequest {
     }
 
     public void setLastName(String lastName) {
-        if (StringUtils.containsOnly(lastName, valid)) {
+        if (StringUtils.containsOnly(lastName, VALID)) {
             this.lastName = StringUtils.capitalize(lastName.toLowerCase());
         } else {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
