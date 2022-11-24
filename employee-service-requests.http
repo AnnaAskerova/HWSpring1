@@ -5,8 +5,8 @@ POST http://localhost:8080/employees
 Content-Type: application/json
 
 {
-  "firstName": "Test",
-  "lastName": "Test",
+  "firstName": "tEST",
+  "lastName": "xxx",
   "department": 1,
   "salary": 1000
 }
@@ -15,8 +15,8 @@ POST http://localhost:8080/employees
 Content-Type: application/json
 
 {
-  "firstName": "Test2",
-  "lastName": "Test2",
+  "firstName": "rITa",
+  "lastName": "Test",
   "department": 2,
   "salary": 10000
 }
@@ -25,7 +25,7 @@ POST http://localhost:8080/employees
 Content-Type: application/json
 
 {
-  "firstName": "Test3",
+  "firstName": null,
   "lastName": "Test3",
   "department": 2,
   "salary": 7000

@@ -4,7 +4,10 @@ import com.example.course3.employee.model.Employee;
 import com.example.course3.employee.record.EmployeeRequest;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -16,10 +19,7 @@ public class EmployeeService {
     }
 
     public Employee addEmployee(EmployeeRequest employeeRequest) {
-        if (employeeRequest.getFirstName() == null || employeeRequest.getLastName() == null) {
-            throw new IllegalArgumentException("Имя/фамилия должны быть заполнены!");
-        }
-        Employee employee = new Employee(employeeRequest.getLastName(),
+        Employee employee = new Employee(employeeRequest.getFirstName(),
                 employeeRequest.getLastName(), employeeRequest.getDepartment(),
                 employeeRequest.getSalary());
         this.employees.put(employee.getId(), employee);
