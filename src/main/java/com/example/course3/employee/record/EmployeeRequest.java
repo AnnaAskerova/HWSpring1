@@ -1,30 +1,24 @@
 package com.example.course3.employee.record;
 
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.server.ResponseStatusException;
-
 public class EmployeeRequest {
     private String firstName;
     private String lastName;
     private int department;
     private int salary;
-    private static String VALID= "qwertyuiopasdfghjklzxcvbnQWERTYUIOPASDFGHJKLZXCVBNM -";
+
+    public EmployeeRequest(String firstName, String lastName, int department, int salary) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.department = department;
+        this.salary = salary;
+    }
 
     public void setFirstName(String firstName) {
-        if (StringUtils.containsOnly(firstName, VALID)) { //этот метод сразу проверяет на null
-            this.firstName = StringUtils.capitalize(firstName.toLowerCase());
-        } else {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
-        }
+        this.firstName = firstName;
     }
 
     public void setLastName(String lastName) {
-        if (StringUtils.containsOnly(lastName, VALID)) {
-            this.lastName = StringUtils.capitalize(lastName.toLowerCase());
-        } else {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
-        }
+        this.lastName = lastName;
     }
 
     public void setDepartment(int department) {
