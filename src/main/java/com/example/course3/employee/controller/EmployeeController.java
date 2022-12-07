@@ -1,6 +1,6 @@
 package com.example.course3.employee.controller;
 
-import com.example.course3.employee.model.Employee;
+import com.example.course3.employee.model.*;
 import com.example.course3.employee.record.EmployeeRequest;
 import com.example.course3.employee.service.EmployeeService;
 import org.springframework.web.bind.annotation.GetMapping;
